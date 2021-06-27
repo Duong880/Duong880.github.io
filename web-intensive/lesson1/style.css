@@ -1,0 +1,57 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-color:whitesmoke
+}
+.container{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.form_signUp_wrapper{
+    background-color:white;
+    width: 65%;
+    height:600px;
+    border-radius:25px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.25);
+}
+.form_signUp_input_wrapper input{
+    display: block;
+}
+.form_signUp_wrapper .row{
+    height:100%
+}
+.form_signUp_wrapper .right, .form_signUp_wrapper .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100%
+}
+.form_signUp_wrapper .right h1{
+    margin-bottom: 70px;
+}
+.form_signUp_wrapper .right input:not(.form-check){
+    padding:10px 15px;
+    margin-bottom: 10px;
+    width: 250px;
+}
+.form_signUp_wrapper .right input.form-check{
+    padding: 0 !important;
+}
+.form_signUp_wrapper .right button{
+    padding: 10px 45px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+.form_signUp_wrapper .right button:hover{
+    background-color:whitesmoke;
+}
+.text-error{
+    color: red;
+}
