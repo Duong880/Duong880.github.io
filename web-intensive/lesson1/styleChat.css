@@ -109,7 +109,7 @@ body{
 .chat-content-container{
     display: flex;
     flex-direction: column;
-    height: 90%;
+    height: 85%;
     overflow: auto;
 
 }
