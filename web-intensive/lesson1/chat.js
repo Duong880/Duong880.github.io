@@ -15,7 +15,7 @@ async function init() {
 }
 
 let loadConversations = async (email)=>{
-    var currentEmail = email
+    var currentEmail = email.trim()
     document.querySelector("#currentEmail").innerHTML = currentEmail
     let result = await firebase.firestore()
     .collection('chat')
