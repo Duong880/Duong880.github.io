@@ -30,7 +30,7 @@ let loadConversations = async (email)=>{
 
 let signOut = ()=>{
     firebase.auth().signOut().then(function() {
-        window.open('./signin.html','_self')
+        window.open('./signIn.html','_self')
       }, function(error) {
         alert('Sign Out Error', error);
       });
