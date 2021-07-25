@@ -12,7 +12,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./styleChat.css" />
+    <link rel="stylesheet" href="./chat.css" />
     <link
       href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
       rel="stylesheet"
@@ -39,240 +39,32 @@
             </label>
           </div>
         </div>
-        <lottie-player onclick="signOut()"
-        src="https://assets6.lottiefiles.com/packages/lf20_0fwl68.json"  background="transparent"  speed="1"  style="width: 120px; height: 120px;"  loop  autoplay
-        ></lottie-player>
+        <lottie-player onclick="signOut()" src="https://assets7.lottiefiles.com/packages/lf20_0fwl68.json"  background="transparent"  speed="1"  style="width: 120px; height: 120px;"  loop  autoplay></lottie-player>
       </div>
       <div class="users_chat_container">
         <div class="title">
-          <h2 class="text-center">Chat</h2>
+          <h2 class="text-center">Chat BanaDuong</h2>
         </div>
 
-        <div class="list-group list-group-flush border-bottom scrollarea">
-          <div class="list-group-item list-group-item-action lh-tight">
-            <div>
-              <img
-                src="https://img.icons8.com/material-outlined/48/000000/user-male-circle.png"
-              />
-              <span>Leo</span>
-            </div>
+        <div id="list_friends" class="list-group list-group-flush border-bottom scrollarea">
 
-            <div class="time">
-              <span>12:45 Sun</span>
-            </div>
-          </div>
-          <div class="list-group-item list-group-item-action lh-tight">
-            <div>
-              <img
-                src="https://img.icons8.com/material-outlined/48/000000/user-male-circle.png"
-              />
-              <span>Nguyễn Minh Dương</span>
-            </div>
 
-            <div class="time">
-              <span>15:29 Wed</span>
-            </div>
-          </div>
-          <div class="list-group-item list-group-item-action lh-tight">
-            <div>
-              <img
-                src="https://img.icons8.com/material-outlined/48/000000/user-male-circle.png"
-              />
-              <span>Lachichi</span>
-            </div>
-
-            <div class="time">
-              <span>9:16 Thur</span>
-            </div>
-          </div>
-          <div class="list-group-item list-group-item-action lh-tight">
-            <div>
-              <img
-                src="https://img.icons8.com/material-outlined/48/000000/user-male-circle.png"
-              />
-              <span>Mom</span>
-            </div>
-
-            <div class="time">
-              <span>19:27 Tue</span>
-            </div>
-          </div>
-          <div class="list-group-item list-group-item-action lh-tight">
-            <div>
-              <img
-                src="https://img.icons8.com/material-outlined/48/000000/user-male-circle.png"
-              />
-              <span>Dad</span>
-            </div>
-
-            <div class="time">
-              <span>15:50 Sat</span>
-            </div>
-          </div>
-          <div class="list-group-item list-group-item-action lh-tight">
-            <div>
-              <img
-                src="https://img.icons8.com/material-outlined/48/000000/user-male-circle.png"
-              />
-              <span>Brother</span>
-            </div>
-
-            <div class="time">
-              <span>12:20 Thur</span>
-            </div>
-          </div>
-          <div class="list-group-item list-group-item-action lh-tight">
-            <div>
-              <img
-                src="https://img.icons8.com/material-outlined/48/000000/user-male-circle.png"
-              />
-              <span>Owl</span>
-            </div>
-
-            <div class="time">
-              <span>14:41 Fri</span>
-            </div>
-          </div>
-          <div class="list-group-item list-group-item-action lh-tight">
-            <div>
-              <img
-                src="https://img.icons8.com/material-outlined/48/000000/user-male-circle.png"
-              />
-              <span>Haotian</span>
-            </div>
-
-            <div class="time">
-              <span>20:30 Sun</span>
-            </div>
-          </div>
-          <div class="list-group-item list-group-item-action lh-tight">
-            <div>
-              <img
-                src="https://img.icons8.com/material-outlined/48/000000/user-male-circle.png"
-              />
-              <span>Duong</span>
-            </div>
-
-            <div class="time">
-              <span>18:00 Mon</span>
-            </div>
-          </div>
-          <div class="list-group-item list-group-item-action lh-tight">
-            <div>
-              <img
-                src="https://img.icons8.com/material-outlined/48/000000/user-male-circle.png"
-              />
-              <span>Pop</span>
-            </div>
-
-            <div class="time">
-              <span>17:12 Wed</span>
-            </div>
-          </div>
-          <div class="list-group-item list-group-item-action lh-tight">
-            <div>
-              <img
-                src="https://img.icons8.com/material-outlined/48/000000/user-male-circle.png"
-              />
-              <span>Corn</span>
-            </div>
-
-            <div class="time">
-              <span>8:13 Mon</span>
-            </div>
-          </div>
-          <div class="list-group-item list-group-item-action lh-tight">
-            <div>
-              <img
-                src="https://img.icons8.com/material-outlined/48/000000/user-male-circle.png"
-              />
-              <span>Poop</span>
-            </div>
-
-            <div class="time">
-              <span>7:53 Wed</span>
-            </div>
-          </div>
-          <div class="list-group-item list-group-item-action lh-tight">
-            <div>
-              <img
-                src="https://img.icons8.com/material-outlined/48/000000/user-male-circle.png"
-              />
-              <span>Blablabla</span>
-            </div>
-
-            <div class="time">
-              <span>18:00 Wed</span>
-            </div>
-          </div>
-          <div class="list-group-item list-group-item-action lh-tight">
-            <div>
-              <img
-                src="https://img.icons8.com/material-outlined/48/000000/user-male-circle.png"
-              />
-              <span>icecream sunday</span>
-            </div>
-
-            <div class="time">
-              <span>21:36 Tue</span>
-            </div>
-          </div>
         </div>
       </div>
       <div class="body_chat_container">
         <div class="title d-flex justify-content-between">
-          <h2 class="">Leo</h2>
-          <span class="d-flex align-items-center mx-5">12:45 Sun</span>
+          <div>
+            <h2 id="chat_name" class="">...</h2>
+            <p id="currentEmail" style="align-self: center;">ádjfhasjhfafjfhf</p>
+          </div>
+          <p id="currentID" style="align-self: center; width: 20px; overflow: hidden;">...</p>
+          <span id="chat_clock" class="d-flex align-items-center mx-5"></span>
         </div>
         <div class="chat">
           <div class="chat-content-container">
-            <div class="chat-content">
-              <span>HELLO!</span>
-            </div>
-            <div class="chat-content">
-              <span
-                >I want to say something.</span
-              >
-            </div>
-            <div class="chat-content owner">
-              <span
-                >?</span
-              >
-            </div>
-            <div class="chat-content">
-              <span>ULTIMATE CHOCOLATE ICECREAM SUNDAY :) !!</span>
-            </div>
-            <div class="chat-content owner">
-              <span>ok :/</span>
-            </div>
-            <div class="chat-content">
-              <span>THAT'S YOUR RESPOND! Do you have something else to say ?</span>
-            </div>
-            <div class="chat-content owner">
-              <span
-                >Yes I do and it's a good one :).</span
-              >
-            </div>
-            <div class="chat-content">
-              <span
-                >Ok so what is it ?</span
-              >
-            </div>
-            <div class="chat-content owner">
-              <span>Nothing much except I am going to eat you !!!</span>
-            </div>
-            <div class="chat-content">
-              <span>NANI!!!!</span>
-            </div>
-            <div class="chat-content owner">
-              <span>Hmmm that was delicious</span>
-            </div>
-            <div class="chat-content">
-              <span>...</span>
-            </div>
           </div>
-          <form action="">
-            <input type="text" placeholder="Enter your message" />
+          <form id="sent_message">
+            <input name="m" type="text" placeholder="Enter your message" />
             <button type="submit">
               <lottie-player
                 src="https://assets2.lottiefiles.com/packages/lf20_kzb2lxrr.json"
@@ -288,33 +80,33 @@
       </div>
     </div>
 
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
-        <!-- TODO: Add SDKs for Firebase products that you want to use
+  <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-    
-        <script>
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            var firebaseConfig = {
-                apiKey: "AIzaSyAoRC9qYHB4Z4rhbLjgo7Jl-c6O2WaMGSM",
-                authDomain: "duongnoob-b80d7.firebaseapp.com",
-                projectId: "duongnoob-b80d7",
-                storageBucket: "duongnoob-b80d7.appspot.com",
-                messagingSenderId: "319308290719",
-                appId: "1:319308290719:web:692dec01e82e09235720aa",
-                measurementId: "G-QG8SPSCWBS"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
-        </script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
 
-        <script src="./scriptChat.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyAoRC9qYHB4Z4rhbLjgo7Jl-c6O2WaMGSM",
+      authDomain: "duongnoob-b80d7.firebaseapp.com",
+      projectId: "duongnoob-b80d7",
+      storageBucket: "duongnoob-b80d7.appspot.com",
+      messagingSenderId: "319308290719",
+      appId: "1:319308290719:web:692dec01e82e09235720aa",
+      measurementId: "G-QG8SPSCWBS"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+
 
     <!-- JavaScript Bundle with Popper -->
     <script
@@ -323,6 +115,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="./chat.js"></script>
+      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <script>
         const chk = document.getElementById('chk');
