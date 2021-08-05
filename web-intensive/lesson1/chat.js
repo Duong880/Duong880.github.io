@@ -10,7 +10,7 @@ async function init() {
             loadConversations(email)
         }
         else
-            console.log("You haven't sign in");
+            console.log("bbbb");
     })
 }
 
@@ -30,7 +30,7 @@ let loadConversations = async (email)=>{
 
 let signOut = ()=>{
     firebase.auth().signOut().then(function() {
-        window.open('./signIn.html','_self')
+        window.open('./signin.html','_self')
       }, function(error) {
         alert('Sign Out Error', error);
       });
@@ -98,7 +98,7 @@ let rederListFriends = (data, currentEmail)=>{
     }
 
     for(let i of data){
-        let user = document.querySelector(`#${i.id}`)
+        let user = document.getElementById(`${i.id}`)
         console.log(user)
         user.onclick = ()=>{
           renderChat(i, currentEmail)
@@ -147,12 +147,12 @@ setInterval(()=>{
 let form = document.querySelector("#sent_message")
 form.onsubmit = (e)=>{
     e.preventDefault()
-
     let message = form.m.value.trim()
     let currentID = document.querySelector("#currentID").textContent
     let currentEmail = document.querySelector("#currentEmail").textContent
 
     updateNewMessage(message,currentID,currentEmail)
+    
 
     form.m.value = ""
 
@@ -160,45 +160,98 @@ form.onsubmit = (e)=>{
 
 
 let updateNewMessage = async (messageContent,currentID,email) => {
-  if (currentID) {
-      let conversationId = currentID
-      let currentEmail = email
-      let message = {
-          content: messageContent,
-          sentAt: currentEmail,
-      }
-      await firebase.firestore()
-          .collection('chat')
-          .doc(conversationId)
-          .update({
-              messages: firebase.firestore.FieldValue.arrayUnion(message)
-          })
-  }
+    if (currentID) {
+        let conversationId = currentID
+        let currentEmail = email
+        let message = {
+            content: messageContent,
+            sentAt: currentEmail,
+        }
+        await firebase.firestore()
+            .collection('chat')
+            .doc(conversationId)
+            .update({
+                messages: firebase.firestore.FieldValue.arrayUnion(message)
+            })
+    }
 }
 
-
 let setUpConversationchange =  async (email) => {
-  let skipRun = true
-  let currentEmail = email
-  console.log(currentEmail)
-  firebase.firestore()
-  .collection('chat')
-  .where('users', 'array-contains', currentEmail)
-  .onSnapshot(function (snapshot) {
-      if (skipRun) {
-          skipRun = false
-          return
-      }
+    let skipRun = true
+    let currentEmail = email
+    console.log(currentEmail)
+    firebase.firestore()
+    .collection('chat')
+    .where('users', 'array-contains', currentEmail)
+    .onSnapshot(function (snapshot) {
+        if (skipRun) {
+            skipRun = false
+            return
+        }
 
-      let docChanges = snapshot.docChanges()
-      for (let docChange of docChanges) {
-          let type = docChange.type
-          let conversationDoc = docChange.doc
-          let conversation = getDataFromDoc(conversationDoc)
+        let docChanges = snapshot.docChanges()
+        for (let docChange of docChanges) {
+            let type = docChange.type
+            let conversationDoc = docChange.doc
+            let conversation = getDataFromDoc(conversationDoc)
 
-          if (type == 'modified') {
-              renderChat(conversation,currentEmail )
-          }
-      }
-  })
+            if (type == 'modified') {
+                renderChat(conversation,currentEmail )
+            }
+            if(type == 'added'){
+                setTimeout(function(){ location.reload()}, 5000); 
+            }
+        }
+    })
+}
+
+let fAddConversation = document.querySelector("#fAddConversation")
+fAddConversation.onsubmit = (e)=>{
+    e.preventDefault()
+
+    let email = fAddConversation.fEmail.value.trim().toLowerCase()
+    let name = fAddConversation.fName.value
+    let currentEmail = document.querySelector("#currentEmail").textContent
+
+    console.log(email);
+    console.log(name);
+
+    let date = new Date()
+    let h = date.getHours()
+    let m = date.getMinutes()
+    let s = date.getSeconds()
+    let d = date.getDay()
+
+    if(m < 10){
+        m = "0" + m
+    }
+    if(h < 10){
+        h = "0" + h
+    }
+    if(s < 10){
+        s = "0" + s
+    }
+  var weekday = new Array(7);
+  weekday[0] = "Sunday";
+  weekday[1] = "Monday";
+  weekday[2] = "Tuesday";
+  weekday[3] = "Wednesday";
+  weekday[4] = "Thursday";
+  weekday[5] = "Friday";
+  weekday[6] = "Saturday";
+
+  var n = weekday[d]
+
+  let conversation = {
+    createAt : `${h}:${m}:${s}     ${n}`,
+    friendName: name,
+    messages: [],
+    users:[currentEmail,email]
+}
+
+    addConversation(conversation)
+}
+
+let addConversation = async (data)=>{
+    await firebase.firestore().collection('chat').add(data)
 }
